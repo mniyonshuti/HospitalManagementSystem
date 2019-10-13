@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout/masterlayout.html}">
+        <head>
+            <meta charset="UTF-8">
+
+            <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+                  integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+            <meta charset="UTF-8">
+            <title>Home</title>
+        </head>
+        <body>
+        <th:block layout:fragment="content">
+        <div class="container" >
+
+        <div>
+            <div class="column" style="float: left">
+
+            </div>
+            <div class="column" style="float: left">
+                <div class="jumbotron">
+                    <h1 class="display-3">Hello, world!</h1>
+                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4">
+                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                    </p>
+                </div>
+            </div>
+            <div class="column" style="float: right">
+                <div class="card text-white bg-primary mb-3" style="max-width: 20rem; float: right" >
+                    <div class="card-header">Count of Patients</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Count of Patients</h4>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+                <div class="card text-white bg-success mb-3" style="max-width: 20rem;float: right;">
+                    <div class="card-header">Count of eldeery Patients</div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+        </th:block>
+</body>
+</html>

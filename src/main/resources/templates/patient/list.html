@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Patients</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <h1>List of Patients</h1>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Patient Number</th>
+                    <th scope="col">Is An Out Patient</th>
+                    <th scope="col">Patients Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Contact Number</th>
+                    <th scope="col">Date of Birth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="patient, iterStat : ${patients}">
+                    <th scope="row" th:text="${iterStat.count}"></th>
+                    <td th:text="${patient.patientNumber}"></td>
+                    <td th:text="${patient.isAnOutPatient}"></td>
+                    <td th:text="${patient.fullNames}"></td>
+                    <td th:text="${patient.emailAddress}"></td>
+                    <td th:text="${patient.contactPhoneNumber}"></td>
+                    <td th:text="${patient.dateOfBirth}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

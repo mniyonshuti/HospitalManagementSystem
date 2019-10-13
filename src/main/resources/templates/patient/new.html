@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add-Patient</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+</head>
+<body>
+    <div style="margin: 2%">
+        <h2 >Enter patient details</h2>
+    </div>
+    <form name="newPatient" id="newPatient" method="post" action="/hcmc/patient/new" th:object="${patient}">
+        <fieldset>
+                <div>
+                    <div class="row" style="width: 90%; margin: 1%" >
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                 <label for="patientNumber">Patient Number</label>
+                                <span th:if="${#fields.hasErrors('patientNumber')}" th:errors="*{patientNumber}"
+                                                  class="alert alert-danger"></span>
+                                <input id="patientNumber" name="patientNumber" type="text" class="form-control" th:value="${patient.patientNumber}"
+                                                   placeholder="(e.g. P1000001) ">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="isAnOutPatient">Is Out Patient</label>
+                                    <span th:if="${#fields.hasErrors('isAnOutPatient')}" th:errors="*{isAnOutPatient}" class="alert alert-danger"></span>
+                                    <select id="isAnOutPatient" name="isAnOutPatient" th:type="text" class="form-control" th:value="${patient.isAnOutPatient}">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="fullNames">Full Names</label>
+                                    <span th:if="${#fields.hasErrors('fullNames')}" th:errors="*{fullNames}"
+                                                              class="alert alert-danger"></span>
+                                    <input id="fullNames" name="fullNames" type="text" class="form-control" th:value="${patient.fullNames}"
+                                                               placeholder="(e.g. John H. Smith)">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="emailAddress">E-mail</label>
+                                    <span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"
+                                                              class="alert alert-danger"></span>
+                                    <input id="emailAddress" name="emailAddress" type="text" class="form-control" th:value="${patient.emailAddress}"
+                                                               placeholder="e.g. jhsmith@globalmail.net)">
+                                 </div>
+                            </div>
+                            <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="contactPhoneNumber">Contact Number</label>
+                                        <span th:if="${#fields.hasErrors('contactPhoneNumber')}" th:errors="*{contactPhoneNumber}"
+                                                                  class="alert alert-danger"></span>
+                                        <input id="contactPhoneNumber" name="contactPhoneNumber" type="text" class="form-control" th:value="${patient.contactPhoneNumber}"
+                                                                   placeholder="e.g (641) 001-0012">
+                                     </div>
+                            </div>
+                            <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="dateOfBirth">Date of Birth</label>
+                                        <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"
+                                              class="alert alert-danger"></span>
+                                        <input id="dateOfBirth" name="dateOfBirth" type="date" class="form-control"
+                                               th:value="${patient.dateOfBirth}">
+                                    </div>
+                                </div>
+                    </div>
+                    <div style="float:right;">
+                        <a href="/hcmc/home" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
+                        <button id="btnSubmit" type="submit" class="btn btn-outline-success">Register Patient</button>
+                    </div>
+        </fieldset>
+    </form>
+</body>
+</html>
